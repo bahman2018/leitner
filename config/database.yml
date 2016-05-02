@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: bahman
+  password: ripterm2017
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: leitner_development
+
+test:
+  <<: *default
+  database: leitner_test
+
+production:
+  <<: *default
+  database: leitner_production
+  username: leitner
+  password: <%= ENV['LEITNER_DATABASE_PASSWORD'] %>
