@@ -1,11 +1,11 @@
 class IndexAndRelations < ActiveRecord::Migration
-  def slef.up
+  def self.up
     change_column("users","email", string, :limite=>100)
     rename_cloumn("users","password","hashed_password")
     add_index("words","word")
     add_index("users","username")
   end
-  def slef.down
+  def self.down
     change_column("users","email", string, :default=>"", :null=>false)
     rename_column("users","hashed_password","password")
     remove_index("users","username")

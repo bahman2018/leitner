@@ -40,3 +40,9 @@ WHERE fk.referenced_column_name is not null
   AND fk.table_name = 'words'
 [0m
   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `words`
+  [1m[36mActiveRecord::SchemaMigration Load (7.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to IndexAndRelations (20160503031144)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to IndexAndRelations (20160503031144)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to IndexAndRelations (20160503031144)
