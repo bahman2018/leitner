@@ -1,14 +1,48 @@
 
 <div id="content">
-  <%=form_for(:user,:url=>{:action=>'create'}) do |f| %>
-      <table align="right" dir="ltr" style="width:100%; height: 159px;">
+  <%=form_for(:user,:url=>{:action=>'create'},:html => {:name=>"new_user", :method => :post, :onclick => "return validate(this);", :multipart => true}) do |f| %>
+      <table>
         <tr>
-          <td  align="right" style="width: 225px; height: 24px;" rowspan="1">
+          <td colspan="2" align="right">
+             <span id="message" style="color:Red;direction:rtl;">Test</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
             Username :
           </td>
-          <td style="height: 24px; width: 154px;">
-            <%= f.text_field(:username)%>
+          <td >
+            <%= f.text_field(:username,:size=>25, :maxlength=>25)%>
           </td>
+        </tr>
+        <tr>
+          <td align="right">
+            Password :
+          </td>
+          <td>
+            <%= f.password_field(:password,:size=>25, :maxlength=>25)%>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            Confirm password :
+          </td>
+          <td>
+            <input type="password" name="cpassword" size="25" maxlength="25" >
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            Email:
+          </td>
+          <td>
+            <%= f.text_field(:email,:size=>30, :maxlength=>50)%>
+          </td>
+        </tr>
+        <tr>
+           <td colspan="2" align="right">
+            <%= submit_tag("Create user") %>
+           </td>
         </tr>
       </table>
   <%end%>
