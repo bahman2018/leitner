@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502214453) do
+ActiveRecord::Schema.define(version: 20160503031144) do
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",   limit: 25
-    t.string   "name",       limit: 25
-    t.string   "paassword",  limit: 25
-    t.string   "email",      limit: 255, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "username",        limit: 25
+    t.string   "name",            limit: 25
+    t.string   "hashed_password", limit: 25
+    t.string   "email",           limit: 255, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
+
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   create_table "words", force: :cascade do |t|
     t.string   "word",          limit: 50
@@ -30,5 +32,7 @@ ActiveRecord::Schema.define(version: 20160502214453) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  add_index "words", ["word"], name: "index_words_on_word", using: :btree
 
 end

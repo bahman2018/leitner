@@ -1,0 +1,31 @@
+
+<div id="content">
+  <%=form_for(:user,:url=>{:action=>'create'}) do |f| %>
+      <table align="right" dir="ltr" style="width:100%; height: 159px;">
+        <tr>
+          <td  align="right" style="width: 225px; height: 24px;" rowspan="1">
+            Username :
+          </td>
+          <td style="height: 24px; width: 154px;">
+            <%= f.text_field(:username)%>
+          </td>
+        </tr>
+      </table>
+  <%end%>
+</div>
+
+<div id="sidebar">
+  <h3><span id="ctl00_Label2">Menu</span>
+  </h3>
+
+  <ul>
+
+    <li><a href="/login/index">Home</a></li>
+    <li><a href="/login/sign_up">Sign Up</a></li>
+  </ul>
+
+  <h3><span id="ctl00_Label1">Hello! Guest,</span>
+  </h3>
+
+
+</div>
